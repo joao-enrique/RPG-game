@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed: int = 35
 @onready var animations = $animations
+@onready var collision = $CollisionShape2D
 
 func handleInput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -13,10 +14,12 @@ func updateAnimation():
 			animations.stop()
 	else:
 		var direction = "Down"
-		if velocity.x < 0: direction = "Left"
-		elif velocity.x > 0: direction = "Right"
-		elif velocity.y < 0: direction = "Up"
-		
+		if velocity.x < 0: 
+			direction = "Left"
+		elif velocity.x > 0: 
+			direction = "Right"
+		elif velocity.y < 0: 
+			direction = "Up"
 		animations.play("Walk"+direction)
 	
 func _physics_process(delta):
