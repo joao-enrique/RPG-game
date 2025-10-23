@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck7tfbdiufuy8"
-path="res://.godot/imported/tilesetNature.png-1534e507c76e7230279a7f8a33b31f62.ctex"
+uid="uid://c4oxfgaiw53t1"
+path="res://.godot/imported/animatedflowers.png-2e872a5621585608bb54c2e77d3bc915.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tilesetNature.png"
-dest_files=["res://.godot/imported/tilesetNature.png-1534e507c76e7230279a7f8a33b31f62.ctex"]
+source_file="res://Assets/animatedflowers.png"
+dest_files=["res://.godot/imported/animatedflowers.png-2e872a5621585608bb54c2e77d3bc915.ctex"]
 
 [params]
 
