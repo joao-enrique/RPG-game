@@ -5,9 +5,11 @@ signal healthChanged
 @export var speed: int = 35
 @onready var animations = $animations
 @onready var collision = $CollisionShape2D
-@export var maxHealth = 3
 
+@export var maxHealth = 3
 @onready var currentHealth: int = maxHealth
+
+@export var knockbackPower: int = 500
 
 func handleInput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -36,3 +38,14 @@ func _on_hurt_box_area_entered(area):
 		if currentHealth < 0:
 			currentHealth = maxHealth
 		healthChanged.emit(currentHealth)
+		knoback(area.get_parent().velocity)
+		
+func knoback(enemyVelocity: Vector2):
+	var knockbackDirection = (enemyVelocity - velocity).normalized() * knockbackPower
+	velocity = knockbackDirection
+	print_debug(velocity)
+	print_debug(position)
+	move_and_slide()
+	print_debug(position)
+	print_debug(" ")
+	
