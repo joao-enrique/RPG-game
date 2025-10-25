@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal healthChanged
+
 @export var speed: int = 35
 @onready var animations = $animations
 @onready var collision = $CollisionShape2D
@@ -33,4 +35,4 @@ func _on_hurt_box_area_entered(area):
 		currentHealth -= 1
 		if currentHealth < 0:
 			currentHealth = maxHealth
-		print_debug(currentHealth)
+		healthChanged.emit(currentHealth)
