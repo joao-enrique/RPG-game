@@ -261,7 +261,8 @@ texture = ExtResource("3_hsv4n")
 7:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, 0, -4, 5, -0.5, 6.5, 2.5, 6.5, 6, 3.5, 5.5, -2.5, 3.5, -5.5, 0, -6)
 
 [sub_resource type="TileSet" id="TileSet_mnrsa"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Sands"
 terrain_set_0/terrain_0/color = Color(0.698039, 0.254902, 0.47451, 1)

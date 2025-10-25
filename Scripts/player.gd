@@ -14,15 +14,17 @@ func updateAnimation():
 			animations.stop()
 	else:
 		var direction = "Down"
-		if velocity.x < 0: 
-			direction = "Left"
-		elif velocity.x > 0: 
-			direction = "Right"
-		elif velocity.y < 0: 
-			direction = "Up"
+		if velocity.x < 0: direction = "Left"
+		elif velocity.x > 0: direction = "Right"
+		elif velocity.y < 0: direction = "Up"
 		animations.play("Walk"+direction)
-	
+		
 func _physics_process(delta):
 	handleInput()
 	move_and_slide()
 	updateAnimation()
+
+
+func _on_hurt_box_area_entered(area):
+	if area.name == "hitBox":
+		print_debug(area.get_parent().name)
