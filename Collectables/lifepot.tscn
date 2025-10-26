@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d21qnschqbca3"]
+
+[ext_resource type="PackedScene" uid="uid://c1hqjpsvdo5o7" path="res://Collectables/collectable.tscn" id="1_qkrwe"]
+[ext_resource type="Texture2D" uid="uid://drv4gq41p6jn8" path="res://Assets/LifePot.png" id="2_mf4eh"]
+
+[node name="Lifepot" instance=ExtResource("1_qkrwe")]
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_mf4eh")

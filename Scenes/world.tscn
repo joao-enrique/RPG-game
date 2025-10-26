@@ -1,13 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://wca44pj6lt65"]
+[gd_scene load_steps=16 format=3 uid="uid://wca44pj6lt65"]
 
 [ext_resource type="Texture2D" uid="uid://kl8p7olyym17" path="res://Assets/groundTileset.png" id="1_fb7ub"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_h71oq"]
 [ext_resource type="PackedScene" uid="uid://dk2ltdaaejyb6" path="res://Player/player.tscn" id="1_ypm1v"]
 [ext_resource type="Texture2D" uid="uid://c4oxfgaiw53t1" path="res://Assets/animatedflowers.png" id="2_cip5p"]
 [ext_resource type="Texture2D" uid="uid://ck7tfbdiufuy8" path="res://Assets/TilesetNature.png" id="3_hsv4n"]
+[ext_resource type="PackedScene" uid="uid://cxyo1umxs6bbp" path="res://Collectables/sword.tscn" id="3_sllkc"]
 [ext_resource type="Script" path="res://Scripts/Follow Cam.gd" id="5_n0s3c"]
 [ext_resource type="PackedScene" uid="uid://x3pu6eijv86f" path="res://Enemies/enemy.tscn" id="6_q8s5d"]
 [ext_resource type="PackedScene" uid="uid://drhtlgqmb85go" path="res://GUI/hearts_container.tscn" id="7_fxfjs"]
+[ext_resource type="PackedScene" uid="uid://d21qnschqbca3" path="res://Collectables/lifepot.tscn" id="9_t4hxc"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ic33h"]
+resource_name = "Collectables"
+scenes/1/scene = ExtResource("9_t4hxc")
+scenes/3/scene = ExtResource("3_sllkc")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bliwq"]
 texture = ExtResource("2_cip5p")
@@ -271,6 +278,7 @@ terrain_set_0/terrain_0/color = Color(0.698039, 0.254902, 0.47451, 1)
 sources/3 = SubResource("TileSetAtlasSource_bliwq")
 sources/5 = SubResource("TileSetAtlasSource_brgxk")
 sources/6 = SubResource("TileSetAtlasSource_2h32e")
+sources/0 = SubResource("TileSetScenesCollectionSource_ic33h")
 
 [node name="World" type="Node2D"]
 z_index = 1
@@ -304,6 +312,13 @@ layer_3/y_sort_enabled = true
 layer_3/y_sort_origin = 0
 layer_3/z_index = 1
 layer_3/tile_data = PackedInt32Array(1572865, 6, 0, 65540, 6, 0, 1441796, 6, 0, 1638404, 6, 0, 1835012, 6, 0, 589830, 6, 0, 851975, 6, 0, 131080, 6, 0, 262152, 6, 0, 720904, 6, 0, 1376264, 6, 0, 655371, 6, 0, 1179659, 6, 0, 1376267, 6, 0, 1572875, 6, 0, 1638411, 6, 0, 1703949, 6, 0, 2424845, 6, 0, 2490381, 6, 0, 589838, 6, 0, 720910, 6, 0, 1376270, 6, 0, 1835023, 6, 0, 2162703, 6, 0, 2293776, 6, 0, 786449, 6, 0, 1048593, 6, 0, 1179666, 6, 0, 2293778, 6, 0, 327699, 6, 0, 131094, 6, 0, 1048598, 6, 0, 2162710, 6, 0, 393239, 6, 0, 983063, 6, 0, 1441816, 6, 0, 2031640, 6, 0, 1507353, 6, 0, 196634, 6, 0, 393242, 6, 0, 655386, 6, 0, 65564, 6, 0, 1310748, 6, 0, 1376287, 6, 0, 65568, 6, 0, 196640, 6, 0, 2228256, 6, 0, 786465, 6, 0, 2228258, 6, 0, 1900579, 6, 0, 458788, 6, 0, 1769508, 6, 0, 2097188, 6, 0, 196645, 6, 0, 917541, 6, 0, 1245221, 6, 0, 393254, 6, 0, 2097190, 6, 0, 2490406, 6, 0, 65576, 6, 0, 524330, 6, 0, 1376298, 6, 0, 2293803, 6, 0, 1310764, 6, 0, 2162732, 6, 0, 720941, 6, 0, 458798, 6, 0, 1900590, 6, 0, 2424878, 6, 0, 589871, 6, 0, 2097199, 6, 0, 1835056, 6, 0, 327729, 6, 0, 2097201, 6, 0, 1441843, 6, 0, 1572915, 6, 0, 131124, 6, 0, 2555956, 6, 0, 1703989, 6, 0, 2424885, 6, 0, 131126, 6, 0, 1572918, 6, 0, 2228278, 6, 0, 393271, 6, 0, 983095, 6, 0, 1900599, 6, 0, 2097207, 6, 0, 2097209, 6, 0, 65594, 6, 0, 458811, 6, 0, 1638459, 6, 0, 983100, 6, 0, 2293820, 6, 0, 65597, 6, 0, 458813, 6, 0, 1376317, 6, 0, 1114174, 6, 0, 2555966, 6, 0, 1376321, 6, 0, 1507394, 6, 0, 1114179, 6, 0, 2031683, 6, 0, 458821, 6, 0, 2490437, 6, 0)
+layer_4/name = "Collectables"
+layer_4/enabled = true
+layer_4/modulate = Color(1, 1, 1, 1)
+layer_4/y_sort_enabled = false
+layer_4/y_sort_origin = 0
+layer_4/z_index = 0
+layer_4/tile_data = PackedInt32Array(458761, 0, 65536, 524293, 0, 65536, 327696, 0, 65536, 655382, 0, 65536, 851979, 0, 65536, 458762, 0, 131072, 524292, 0, 131072, 655381, 0, 131072, 393224, 0, 196608, 393232, 0, 196608, 589829, 0, 196608)
 
 [node name="Player" parent="TileMap" instance=ExtResource("1_ypm1v")]
 position = Vector2(105, 65)
@@ -333,6 +348,27 @@ endPoint = NodePath("slime2")
 
 [node name="slime2" type="Marker2D" parent="TileMap/enemy2"]
 position = Vector2(144, 0)
+
+[node name="enemy3" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("6_q8s5d")]
+position = Vector2(464, 256)
+endPoint = NodePath("slime3")
+
+[node name="slime3" type="Marker2D" parent="TileMap/enemy3"]
+position = Vector2(208, 112)
+
+[node name="enemy4" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("6_q8s5d")]
+position = Vector2(1152, 352)
+endPoint = NodePath("slime4")
+
+[node name="slime4" type="Marker2D" parent="TileMap/enemy4"]
+position = Vector2(256, 0)
+
+[node name="enemy5" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("6_q8s5d")]
+position = Vector2(1264, 176)
+endPoint = NodePath("slime5")
+
+[node name="slime5" type="Marker2D" parent="TileMap/enemy5"]
+position = Vector2(256, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
