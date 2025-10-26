@@ -308,6 +308,7 @@ layer_3/tile_data = PackedInt32Array(1572865, 6, 0, 65540, 6, 0, 1441796, 6, 0, 
 [node name="Player" parent="TileMap" instance=ExtResource("1_ypm1v")]
 position = Vector2(105, 65)
 speed = 70
+knockbackPower = 1000
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]
 zoom = Vector2(3, 3)

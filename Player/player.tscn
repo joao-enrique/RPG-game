@@ -188,7 +188,8 @@ libraries = {
 }
 
 [node name="hurtTimer" type="Timer" parent="."]
-wait_time = 0.9
+wait_time = 2.0
 one_shot = true
 
 [connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_exited" from="hurtBox" to="." method="_on_hurt_box_area_exited"]
