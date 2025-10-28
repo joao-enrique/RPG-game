@@ -14,7 +14,7 @@ signal healthChanged
 @export var knockbackPower: int = 500
 
 var isHurt: bool = false
-var enemyCollisions = []
+@export var inventory: Inventory
 
 func _ready():
 	effects.play("RESET")

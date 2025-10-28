@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dk2ltdaaejyb6"]
+[gd_scene load_steps=15 format=3 uid="uid://dk2ltdaaejyb6"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_n4d3q"]
+[ext_resource type="Resource" uid="uid://bc0265jpig8hs" path="res://inventoryItems/playerInventory.tres" id="2_384ka"]
 [ext_resource type="Texture2D" uid="uid://dhwgk4343eseg" path="res://Assets/playerSprite.png" id="2_vt8bb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvlyq"]
@@ -149,6 +150,7 @@ _data = {
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_n4d3q")
+inventory = ExtResource("2_384ka")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 clip_children = 2
