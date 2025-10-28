@@ -1,7 +1,68 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=2 format=3 uid="uid://bc0265jpig8hs"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=18 format=3 uid="uid://bc0265jpig8hs"]
 
+[ext_resource type="Script" path="res://Scripts/inventorySlot.gd" id="2_v1j2k"]
 [ext_resource type="Script" path="res://Scripts/inventory.gd" id="3_jyeu1"]
+
+[sub_resource type="Resource" id="Resource_bmdgc"]
+script = ExtResource("2_v1j2k")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_0dw8x"]
+script = ExtResource("2_v1j2k")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_qbqnc"]
+script = ExtResource("2_v1j2k")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_lgrlt"]
+script = ExtResource("2_v1j2k")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_cb1h5"]
+script = ExtResource("2_v1j2k")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_mnpif"]
+script = ExtResource("2_v1j2k")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_wyuw4"]
+script = ExtResource("2_v1j2k")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_e2pps"]
+script = ExtResource("2_v1j2k")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_hu0kt"]
+script = ExtResource("2_v1j2k")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_f03fj"]
+script = ExtResource("2_v1j2k")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_08l88"]
+script = ExtResource("2_v1j2k")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_n77qh"]
+script = ExtResource("2_v1j2k")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_ecf3g"]
+script = ExtResource("2_v1j2k")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_4aarh"]
+script = ExtResource("2_v1j2k")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_gduhk"]
+script = ExtResource("2_v1j2k")
+amount = 0
 
 [resource]
 script = ExtResource("3_jyeu1")
-items = Array[Resource("res://Scripts/inventoryItems.gd")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+slots = Array[ExtResource("2_v1j2k")]([SubResource("Resource_bmdgc"), SubResource("Resource_0dw8x"), SubResource("Resource_qbqnc"), SubResource("Resource_lgrlt"), SubResource("Resource_cb1h5"), SubResource("Resource_mnpif"), SubResource("Resource_wyuw4"), SubResource("Resource_e2pps"), SubResource("Resource_hu0kt"), SubResource("Resource_f03fj"), SubResource("Resource_08l88"), SubResource("Resource_n77qh"), SubResource("Resource_ecf3g"), SubResource("Resource_4aarh"), SubResource("Resource_gduhk")])
