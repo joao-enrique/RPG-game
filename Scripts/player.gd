@@ -8,12 +8,15 @@ signal healthChanged
 @onready var collision = $CollisionShape2D
 @onready var hurtBox = $hurtBox
 @onready var hurtTimer = $hurtTimer
+@onready var weapon = $weapon
 
 @export var maxHealth = 3
 @onready var currentHealth: int = maxHealth
 @export var knockbackPower: int = 500
 
+var lastAnimDirection: String = "Down"
 var isHurt: bool = false
+var isAttacking: bool =  false
 @export var inventory: Inventory
 
 func _ready():
@@ -23,7 +26,20 @@ func handleInput():
 	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = moveDirection * speed
 	
+	if Input.is_action_just_pressed("attack"):
+		attack()
+		
+func attack():
+	animations.play("attack" + lastAnimDirection)
+	isAttacking = true
+	weapon.visible = true
+	await animations.animation_finished
+	isAttacking = false
+	weapon.visible = false
+	
 func updateAnimation():
+	if isAttacking: return
+	
 	if velocity.length() == 0:
 		if animations.is_playing():
 			animations.stop()
@@ -32,7 +48,10 @@ func updateAnimation():
 		if velocity.x < 0: direction = "Left"
 		elif velocity.x > 0: direction = "Right"
 		elif velocity.y < 0: direction = "Up"
+		
 		animations.play("Walk"+direction)
+		lastAnimDirection = direction
+		
 		
 func _physics_process(delta):
 	handleInput()
