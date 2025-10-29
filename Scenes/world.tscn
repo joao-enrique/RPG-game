@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://wca44pj6lt65"]
+[gd_scene load_steps=19 format=3 uid="uid://wca44pj6lt65"]
 
 [ext_resource type="Texture2D" uid="uid://kl8p7olyym17" path="res://Assets/groundTileset.png" id="1_fb7ub"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_h71oq"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://d21qnschqbca3" path="res://Collectables/lifepot.tscn" id="9_t4hxc"]
 [ext_resource type="Script" path="res://Scripts/CanvasLayer.gd" id="10_krpr7"]
 [ext_resource type="PackedScene" uid="uid://d1fxt4mrmxivv" path="res://GUI/inventory_gui.tscn" id="11_3wio6"]
+[ext_resource type="PackedScene" uid="uid://rripqplowaj5" path="res://GUI/hotbar.tscn" id="13_acybl"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ic33h"]
 resource_name = "Collectables"
@@ -403,6 +404,19 @@ offset_right = 69.0
 offset_bottom = 45.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Hotbar" parent="CanvasLayer" instance=ExtResource("13_acybl")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -58.0
+offset_top = -58.0
+offset_right = 58.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [connection signal="closed" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_opened"]
