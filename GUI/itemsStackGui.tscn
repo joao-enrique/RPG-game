@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://2h3b3lufgj2i"]
+
+[ext_resource type="Script" path="res://Scripts/itemsStackGui.gd" id="1_uw3uq"]
+
+[node name="Panel" type="Panel"]
+script = ExtResource("1_uw3uq")
+
+[node name="item" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_top = -4.0
+offset_right = 19.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "99"
