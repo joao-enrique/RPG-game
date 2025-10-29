@@ -1,11 +1,16 @@
 extends Button
 
+@onready var background_sprite: Sprite2D = $background
+@onready var item_stack_gui: ItemStackGui = $CenterContainer/Panel
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func update_to_slot(slot: InventorySlot) -> void:
+	if !slot.item:
+		item_stack_gui.visible = false
+		background_sprite.frame = 0 
+		return
+		
+	item_stack_gui.inventorySlot = slot
+	item_stack_gui.update()
+	item_stack_gui.visible = true
+	
+	background_sprite.frame = 1 

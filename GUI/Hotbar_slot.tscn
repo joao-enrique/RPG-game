@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c4sw578xbfu0"]
 
-[ext_resource type="Script" path="res://Scripts/Hotbar_slot.gd" id="1_odisw"]
+[ext_resource type="Script" path="res://Scripts/hotbar_slot.gd" id="1_kho14"]
 [ext_resource type="Texture2D" uid="uid://me1itm8gdikb" path="res://Assets/inventorySlot.png" id="2_iwrh7"]
 [ext_resource type="PackedScene" uid="uid://2h3b3lufgj2i" path="res://GUI/itemsStackGui.tscn" id="3_nmaxk"]
 
@@ -9,7 +9,7 @@ self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(20, 20)
 offset_right = 20.0
 offset_bottom = 20.0
-script = ExtResource("1_odisw")
+script = ExtResource("1_kho14")
 
 [node name="background" type="Sprite2D" parent="."]
 texture = ExtResource("2_iwrh7")
