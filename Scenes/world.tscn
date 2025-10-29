@@ -339,6 +339,7 @@ tilemap = NodePath("../..")
 
 [node name="enemy" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("6_q8s5d")]
 position = Vector2(96, 96)
+limit = 5.0
 endPoint = NodePath("slime1")
 
 [node name="slime1" type="Marker2D" parent="TileMap/enemy"]
@@ -346,6 +347,7 @@ position = Vector2(-64, 48)
 
 [node name="enemy2" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("6_q8s5d")]
 position = Vector2(112, 32)
+limit = 9.0
 endPoint = NodePath("slime2")
 
 [node name="slime2" type="Marker2D" parent="TileMap/enemy2"]
@@ -367,6 +369,7 @@ position = Vector2(256, 0)
 
 [node name="enemy5" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("6_q8s5d")]
 position = Vector2(1264, 176)
+limit = 3.0
 endPoint = NodePath("slime5")
 
 [node name="slime5" type="Marker2D" parent="TileMap/enemy5"]

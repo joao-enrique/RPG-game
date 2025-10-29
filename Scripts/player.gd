@@ -32,10 +32,10 @@ func handleInput():
 func attack():
 	animations.play("attack" + lastAnimDirection)
 	isAttacking = true
-	weapon.visible = true
+	weapon.enable()
 	await animations.animation_finished
 	isAttacking = false
-	weapon.visible = false
+	weapon.disable()
 	
 func updateAnimation():
 	if isAttacking: return
