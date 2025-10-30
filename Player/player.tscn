@@ -1,9 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://dk2ltdaaejyb6"]
+[gd_scene load_steps=20 format=3 uid="uid://dk2ltdaaejyb6"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_n4d3q"]
 [ext_resource type="Resource" uid="uid://bc0265jpig8hs" path="res://inventoryItems/playerInventory.tres" id="2_384ka"]
 [ext_resource type="Texture2D" uid="uid://dhwgk4343eseg" path="res://Assets/playerSprite.png" id="2_vt8bb"]
-[ext_resource type="PackedScene" uid="uid://b7bqk7401uvno" path="res://Player/sword.tscn" id="4_04jyl"]
 [ext_resource type="Script" path="res://Scripts/weapon.gd" id="4_jv2oc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvlyq"]
@@ -403,7 +402,5 @@ y_sort_enabled = true
 position = Vector2(0, 1.5)
 rotation = 2.0944
 script = ExtResource("4_jv2oc")
-
-[node name="sword" parent="weapon" instance=ExtResource("4_04jyl")]
 
 [connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]

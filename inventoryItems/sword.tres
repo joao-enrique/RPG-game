@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="InventoryItems" load_steps=3 format=3 uid="uid://bynqimq78gje3"]
+[gd_resource type="Resource" script_class="WeaponItem" load_steps=4 format=3 uid="uid://bynqimq78gje3"]
 
-[ext_resource type="Script" path="res://Scripts/inventoryItems.gd" id="1_cc0bs"]
+[ext_resource type="Script" path="res://Scripts/weapon_item.gd" id="1_rhofc"]
 [ext_resource type="Texture2D" uid="uid://b3uiqy11gtdc2" path="res://Assets/sword.png" id="2_8t3ms"]
+[ext_resource type="PackedScene" uid="uid://b7bqk7401uvno" path="res://Player/sword.tscn" id="3_nj5hk"]
 
 [resource]
-script = ExtResource("1_cc0bs")
+script = ExtResource("1_rhofc")
+weapon_class = ExtResource("3_nj5hk")
 name = "sword"
 texture = ExtResource("2_8t3ms")
-maxAmountPrStack = 1
+maxAmountPrStack = 2
+consumable = false
