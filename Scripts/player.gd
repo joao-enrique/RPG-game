@@ -99,4 +99,6 @@ func increase_health(amount: int) -> void:
 	healthChanged.emit(currentHealth)
 	
 func use_item(item: InventoryItems) -> void:
+	if not item.can_be_used(self): return
 	item.use(self)
+	inventory.remove_last_used_item()
