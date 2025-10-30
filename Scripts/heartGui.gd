@@ -10,6 +10,10 @@ func _ready():
 func _process(delta):
 	pass
 	
-func update(whole: bool):
-	if whole: sprite.frame = 0 
-	else: sprite.frame = 4 
+func update(fraction: int):
+	match fraction:
+		0: sprite.frame = 0 
+		1: sprite.frame = 1 
+		2: sprite.frame = 2 
+		3: sprite.frame = 3 
+		4: sprite.frame = 4
