@@ -26,10 +26,16 @@ func updateVelocity():
 	velocity = moveDirection.normalized()*speed
 	
 func updateAnimation():
-	var animationString = "WalkUp"
-	if velocity.y > 0:
-		animationString = "WalkDown"
-	animations.play(animationString)
+	if velocity.length() == 0:
+		if animations.is_playing():
+			animations.stop()
+	else:
+		var direction = "Down"
+		if velocity.x < 0: direction = "Left"
+		elif velocity.x > 0: direction = "Right"
+		elif velocity.y < 0: direction = "Up"
+		
+		animations.play("Walk"+direction)
 		
 func _physics_process(delta):
 	if isDead: return
