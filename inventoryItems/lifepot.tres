@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="InventoryItems" load_steps=3 format=3 uid="uid://b0f8cmndojkml"]
+[gd_resource type="Resource" script_class="HealthItem" load_steps=3 format=3 uid="uid://b0f8cmndojkml"]
 
-[ext_resource type="Script" path="res://Scripts/inventoryItems.gd" id="1_fs4w6"]
+[ext_resource type="Script" path="res://Scripts/health_item.gd" id="1_drpl7"]
 [ext_resource type="Texture2D" uid="uid://drv4gq41p6jn8" path="res://Assets/LifePot.png" id="2_1o03r"]
 
 [resource]
-script = ExtResource("1_fs4w6")
+script = ExtResource("1_drpl7")
+health_increase = 1
 name = "lifepot"
 texture = ExtResource("2_1o03r")
 maxAmountPrStack = 5

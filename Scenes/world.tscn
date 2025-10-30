@@ -436,6 +436,7 @@ shape = SubResource("RectangleShape2D_gsbxd")
 [node name="Player" parent="." instance=ExtResource("1_ypm1v")]
 position = Vector2(1489, 231)
 speed = 70
+maxHealth = 3
 knockbackPower = 1000
 
 [node name="follow_cam" type="Camera2D" parent="." node_paths=PackedStringArray("tilemap")]

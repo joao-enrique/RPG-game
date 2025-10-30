@@ -20,6 +20,8 @@ var isAttacking: bool =  false
 @export var inventory: Inventory
 
 func _ready():
+	currentHealth = maxHealth
+	inventory.use_item.connect(use_item)
 	effects.play("RESET")
 
 func handleInput():
@@ -90,4 +92,11 @@ func _on_hurt_box_area_entered(area):
 		area.collect(inventory)
 		
 
-func _on_hurt_box_area_exited(area): pass
+func increase_health(amount: int) -> void:
+	currentHealth += amount
+	currentHealth = min(maxHealth, currentHealth)
+	
+	healthChanged.emit(currentHealth)
+	
+func use_item(item: InventoryItems) -> void:
+	item.use(self)
