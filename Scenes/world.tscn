@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://wca44pj6lt65"]
+[gd_scene load_steps=23 format=3 uid="uid://wca44pj6lt65"]
 
 [ext_resource type="Texture2D" uid="uid://kl8p7olyym17" path="res://Assets/groundTileset.png" id="1_fb7ub"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_h71oq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c4oxfgaiw53t1" path="res://Assets/animatedflowers.png" id="2_cip5p"]
 [ext_resource type="Texture2D" uid="uid://ck7tfbdiufuy8" path="res://Assets/TilesetNature.png" id="3_hsv4n"]
 [ext_resource type="PackedScene" uid="uid://cxyo1umxs6bbp" path="res://Collectables/sword.tscn" id="3_sllkc"]
+[ext_resource type="Texture2D" uid="uid://bjoxiav0w8luf" path="res://Assets/TilesetHouse.png" id="4_se4p7"]
 [ext_resource type="Script" path="res://Scripts/Follow Cam.gd" id="5_n0s3c"]
 [ext_resource type="PackedScene" uid="uid://x3pu6eijv86f" path="res://Enemies/enemy.tscn" id="6_q8s5d"]
 [ext_resource type="PackedScene" uid="uid://drhtlgqmb85go" path="res://GUI/hearts_container.tscn" id="7_fxfjs"]
@@ -13,11 +14,21 @@
 [ext_resource type="Script" path="res://Scripts/CanvasLayer.gd" id="10_krpr7"]
 [ext_resource type="PackedScene" uid="uid://d1fxt4mrmxivv" path="res://GUI/inventory_gui.tscn" id="11_3wio6"]
 [ext_resource type="PackedScene" uid="uid://rripqplowaj5" path="res://GUI/hotbar.tscn" id="13_acybl"]
+[ext_resource type="PackedScene" uid="uid://bqnoquv2r27k6" path="res://Scenes/scene_trigger.tscn" id="15_15jcy"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ic33h"]
 resource_name = "Collectables"
 scenes/1/scene = ExtResource("9_t4hxc")
 scenes/3/scene = ExtResource("3_sllkc")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a0rxf"]
+texture = ExtResource("4_se4p7")
+0:0/size_in_atlas = Vector2i(4, 3)
+0:0/0 = 0
+0:0/0/y_sort_origin = 24
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, 22.5, -15, 10, 0, 10, 0, 23, 26.5, 23, 29.5, 18, 31, -6.5, 23.5, -14.5, -28, -14.5, -29, 3, -27.5, 21.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bliwq"]
 texture = ExtResource("2_cip5p")
@@ -282,9 +293,12 @@ sources/3 = SubResource("TileSetAtlasSource_bliwq")
 sources/5 = SubResource("TileSetAtlasSource_brgxk")
 sources/6 = SubResource("TileSetAtlasSource_2h32e")
 sources/0 = SubResource("TileSetScenesCollectionSource_ic33h")
+sources/1 = SubResource("TileSetAtlasSource_a0rxf")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsbxd"]
+size = Vector2(14, 11)
 
 [node name="World" type="Node2D"]
-z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_h71oq")
 
@@ -322,21 +336,13 @@ layer_4/y_sort_enabled = false
 layer_4/y_sort_origin = 0
 layer_4/z_index = 0
 layer_4/tile_data = PackedInt32Array(458761, 0, 65536, 524293, 0, 65536, 327696, 0, 65536, 655382, 0, 65536, 851979, 0, 65536, 458762, 0, 131072, 524292, 0, 131072, 655381, 0, 131072, 393224, 0, 196608, 393232, 0, 196608, 589829, 0, 196608)
-
-[node name="Player" parent="TileMap" instance=ExtResource("1_ypm1v")]
-position = Vector2(105, 65)
-speed = 70
-knockbackPower = 1000
-
-[node name="Camera2D" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]
-zoom = Vector2(3, 3)
-limit_left = 0
-limit_top = 0
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
-rotation_smoothing_speed = 10.0
-script = ExtResource("5_n0s3c")
-tilemap = NodePath("../..")
+layer_5/name = "Buildings"
+layer_5/enabled = true
+layer_5/modulate = Color(1, 1, 1, 1)
+layer_5/y_sort_enabled = true
+layer_5/y_sort_origin = 0
+layer_5/z_index = 1
+layer_5/tile_data = PackedInt32Array(524381, 1, 0)
 
 [node name="enemy" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("6_q8s5d")]
 position = Vector2(96, 96)
@@ -417,6 +423,36 @@ offset_right = 58.0
 offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="SceneTrigger" parent="." instance=ExtResource("15_15jcy")]
+position = Vector2(1488, 153)
+connected_scene = "inside_house"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+z_index = 2
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_gsbxd")
+
+[node name="Player" parent="." instance=ExtResource("1_ypm1v")]
+position = Vector2(1489, 231)
+speed = 70
+knockbackPower = 1000
+
+[node name="follow_cam" type="Camera2D" parent="." node_paths=PackedStringArray("tilemap")]
+position = Vector2(1489, 231)
+zoom = Vector2(3, 3)
+limit_left = 0
+limit_top = 0
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 10.0
+script = ExtResource("5_n0s3c")
+tilemap = NodePath("../TileMap")
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="any" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(1488, 168)
 
 [connection signal="closed" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_opened"]

@@ -14,6 +14,10 @@ config/name="Game-project"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+scene_manager="*res://Scripts/scene_manager.gd"
+
 [display]
 
 window/size/window_width_override=1920
@@ -72,6 +76,7 @@ right_click={
 2d_physics/layer_1="player"
 2d_physics/layer_2="enemy"
 2d_physics/layer_3="hitBoxes"
+2d_physics/layer_4="triggers"
 
 [rendering]
 
