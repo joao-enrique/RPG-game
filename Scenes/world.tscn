@@ -381,7 +381,7 @@ endPoint = NodePath("slime5")
 position = Vector2(256, 0)
 
 [node name="Dragon" parent="TileMap" instance=ExtResource("9_3wgit")]
-position = Vector2(1424, 160)
+position = Vector2(1424, 144)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3

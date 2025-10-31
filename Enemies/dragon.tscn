@@ -288,15 +288,15 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ipls"]
 radius = 5.0
-height = 16.0
+height = 14.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l84ok"]
-radius = 7.0
-height = 16.0
+radius = 6.0
+height = 14.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_52o01"]
 radius = 7.0
-height = 18.0
+height = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4te78"]
 radius = 33.0151
@@ -360,6 +360,8 @@ position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_4te78")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.19209e-07, -6.5)
+scale = Vector2(0.7, 0.75)
 
 [connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="body_entered" from="FollowArea" to="FollowMovement" method="_on_follow_area_body_entered"]
