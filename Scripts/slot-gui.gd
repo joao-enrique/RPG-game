@@ -1,4 +1,7 @@
-extends Button
+class_name SlotGui extends Button
+
+signal hovering_started
+signal hovering_ended
 
 @onready var backgroundSprite: Sprite2D = $background
 @onready var container: CenterContainer = $CenterContainer
@@ -31,3 +34,12 @@ func clear() -> void:
 		container.remove_child(itemStackGui)
 		itemStackGui = null
 	backgroundSprite.frame = 0
+
+
+func _on_mouse_entered():
+	hovering_started.emit(self)
+
+
+func _on_mouse_exited():
+	hovering_ended.emit(self)
+	print_debug("Saiu")

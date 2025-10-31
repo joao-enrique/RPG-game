@@ -9,6 +9,7 @@ var isOpen: bool = true
 @onready var ItemStackGuiClass = preload("res://GUI/itemsStackGui.tscn")
 @onready var hotbar_slots: Array = $NinePatchRect/HBoxContainer.get_children()
 @onready var slots: Array = hotbar_slots + $NinePatchRect/GridContainer.get_children()
+@onready var infoPanel: InfoPanel = $InfoPanel
 
 var itemInHand: ItemStackGui
 var oldIndex: int = -1
@@ -21,12 +22,15 @@ func _ready():
 	
 func connectSlots():
 	for i in range(slots.size()):
-		var slot = slots[i]
+		var slot: SlotGui = slots[i]
 		slot.index = i
 		
 		var callable = Callable(onSlotClicked)
 		callable = callable.bind(slot)
 		slot.pressed.connect(callable)
+		
+		slot.hovering_started.connect(hovering_started)
+		slot.hovering_ended.connect(hovering_end)
 
 func update():
 	for i in range(min(inventory.slots.size(), slots.size())):
@@ -52,6 +56,7 @@ func open():
 func close():
 	visible = false
 	isOpen = false
+	infoPanel.visible = false	
 	closed.emit()
 	
 func onSlotClicked(slot):
@@ -137,6 +142,14 @@ func putItemBack():
 	await tween.finished
 	insertItemInSlot(targetSlot)
 	locked = false
+	
+func hovering_started(slot: SlotGui) -> void:
+	if !slot.itemStackGui: return
+	infoPanel.display(slot.itemStackGui.inventorySlot.item)
+	infoPanel.global_position = slot.global_position + Vector2(0, slot.size.y)
+	
+func hovering_end() -> void:
+	infoPanel.visible = false
 	
 func _input(event):
 	if itemInHand && !locked && Input.is_action_just_pressed("right_click"):

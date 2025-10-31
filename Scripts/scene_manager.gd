@@ -1,6 +1,7 @@
 class_name SceneManager extends CanvasLayer
 
 @onready var animation: AnimationPlayer = $TransitionAnimation
+@onready var canvasLayer = $"."
 var player: Player
 var last_scene_name: String
 
@@ -13,9 +14,11 @@ func change_scene(from, to_scene_name: String) -> void:
 	player.get_parent().remove_child(player)
 	
 	animation.play("transition_out")
+	canvasLayer.visible = true
 	await animation.animation_finished
 	
 	var full_path = scene_dir_path + to_scene_name + ".tscn"
 	from.get_tree().call_deferred("change_scene_to_file", full_path)
 	
 	animation.play("transition_in")
+	canvasLayer.visible = false

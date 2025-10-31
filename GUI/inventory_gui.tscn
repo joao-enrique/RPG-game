@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1fxt4mrmxivv"]
+[gd_scene load_steps=5 format=3 uid="uid://d1fxt4mrmxivv"]
 
 [ext_resource type="Texture2D" uid="uid://bltk26lctab4q" path="res://Assets/InventoryRect.png" id="1_rnbxt"]
 [ext_resource type="Script" path="res://Scripts/inventory_gui.gd" id="1_wn1es"]
 [ext_resource type="PackedScene" uid="uid://b5lpk8gn4haei" path="res://GUI/slot-gui.tscn" id="2_qag8a"]
+[ext_resource type="PackedScene" uid="uid://oarxe0quqqp7" path="res://GUI/info_panel.tscn" id="4_mgpul"]
 
 [node name="InventoryGUI" type="Control"]
 custom_minimum_size = Vector2(128, 80)
@@ -23,11 +24,12 @@ patch_margin_right = 6
 patch_margin_bottom = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
-offset_right = 146.0
-offset_bottom = 102.0
+offset_right = 127.0
+offset_bottom = 50.0
 
 [node name="Slot" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_qag8a")]
 layout_mode = 2
@@ -83,3 +85,7 @@ layout_mode = 2
 
 [node name="Slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("2_qag8a")]
 layout_mode = 2
+
+[node name="InfoPanel" parent="." instance=ExtResource("4_mgpul")]
+visible = false
+layout_mode = 1

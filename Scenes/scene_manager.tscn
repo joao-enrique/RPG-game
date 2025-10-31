@@ -102,6 +102,7 @@ _data = {
 
 [node name="SceneManager" type="CanvasLayer"]
 layer = 5
+visible = false
 script = ExtResource("1_juonb")
 
 [node name="TransitionColor" type="ColorRect" parent="."]

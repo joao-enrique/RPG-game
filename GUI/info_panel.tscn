@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://oarxe0quqqp7"]
+
+[ext_resource type="Script" path="res://Scripts/info_panel.gd" id="1_q5l7a"]
+
+[node name="InfoPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_q5l7a")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 87.0
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 12
+text = "Item_name"
