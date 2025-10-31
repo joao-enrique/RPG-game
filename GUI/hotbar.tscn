@@ -6,29 +6,50 @@
 
 [node name="Hotbar" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
-offset_right = 117.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_7yma4")
 
 [node name="Container" type="HBoxContainer" parent="."]
-offset_right = 116.0
-offset_bottom = 20.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -389.0
+offset_top = -45.0
+offset_right = 389.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 82
 
 [node name="HotbarSlot" parent="Container" instance=ExtResource("1_v6rwk")]
+custom_minimum_size = Vector2(90, 20)
 layout_mode = 2
 
 [node name="HotbarSlot2" parent="Container" instance=ExtResource("1_v6rwk")]
+custom_minimum_size = Vector2(90, 20)
 layout_mode = 2
 
 [node name="HotbarSlot3" parent="Container" instance=ExtResource("1_v6rwk")]
+custom_minimum_size = Vector2(90, 20)
 layout_mode = 2
 
 [node name="HotbarSlot4" parent="Container" instance=ExtResource("1_v6rwk")]
+custom_minimum_size = Vector2(90, 20)
 layout_mode = 2
 
 [node name="HotbarSlot5" parent="Container" instance=ExtResource("1_v6rwk")]
+custom_minimum_size = Vector2(90, 20)
 layout_mode = 2
 
 [node name="Selector" type="Sprite2D" parent="."]
+position = Vector2(187, 279)
+scale = Vector2(4.5, 4.55)
 texture = ExtResource("3_sba5s")
 centered = false

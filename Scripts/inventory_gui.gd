@@ -146,7 +146,7 @@ func putItemBack():
 func hovering_started(slot: SlotGui) -> void:
 	if !slot.itemStackGui: return
 	infoPanel.display(slot.itemStackGui.inventorySlot.item)
-	infoPanel.global_position = slot.global_position + Vector2(0, slot.size.y)
+	infoPanel.global_position = slot.global_position + Vector2(-5, 120)
 	
 func hovering_end() -> void:
 	infoPanel.visible = false

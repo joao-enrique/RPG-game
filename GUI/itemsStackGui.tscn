@@ -1,18 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://2h3b3lufgj2i"]
+[gd_scene load_steps=3 format=3 uid="uid://2h3b3lufgj2i"]
 
 [ext_resource type="Script" path="res://Scripts/itemsStackGui.gd" id="1_uw3uq"]
+[ext_resource type="FontFile" uid="uid://de4kmng5qj1sq" path="res://Fonts/VT323-Regular.ttf" id="2_4gysg"]
 
 [node name="Panel" type="Panel"]
 script = ExtResource("1_uw3uq")
 
 [node name="item" type="Sprite2D" parent="."]
+scale = Vector2(4.5, 4.5)
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 2
-offset_top = -4.0
-offset_right = 14.0
-offset_bottom = 16.0
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 27.0
+offset_right = 30.0
+offset_bottom = 47.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 9
+theme_override_fonts/font = ExtResource("2_4gysg")
+theme_override_font_sizes/font_size = 25
 text = "99"

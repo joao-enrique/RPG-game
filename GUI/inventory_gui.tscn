@@ -8,15 +8,26 @@
 [node name="InventoryGUI" type="Control"]
 custom_minimum_size = Vector2(128, 80)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 138.0
-offset_bottom = 91.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_wn1es")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-layout_mode = 0
-offset_right = 138.0
-offset_bottom = 91.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -520.0
+offset_top = -286.0
+offset_right = 520.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_rnbxt")
 patch_margin_left = 6
 patch_margin_top = 6
@@ -25,53 +36,74 @@ patch_margin_bottom = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
 custom_minimum_size = Vector2(0, 40)
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 127.0
-offset_bottom = 50.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.141
+anchor_right = 0.5
+anchor_bottom = 0.141
+offset_left = -496.0
+offset_top = -44.936
+offset_right = 491.0
+offset_bottom = 96.064
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 120
 
 [node name="Slot" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_qag8a")]
+custom_minimum_size = Vector2(100, 10)
 layout_mode = 2
 
 [node name="Slot2" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_qag8a")]
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 
 [node name="Slot3" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_qag8a")]
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 
 [node name="Slot4" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_qag8a")]
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 
 [node name="Slot5" parent="NinePatchRect/HBoxContainer" instance=ExtResource("2_qag8a")]
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
 layout_mode = 2
-offset_left = 10.0
-offset_top = 35.0
-offset_right = 126.0
-offset_bottom = 103.0
+offset_left = 21.0
+offset_top = 175.0
+offset_right = 1002.0
+offset_bottom = 526.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/h_separation = 120
+theme_override_constants/v_separation = 67
 columns = 5
 
 [node name="Slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("2_qag8a")]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
 [node name="Slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("2_qag8a")]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
 [node name="Slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("2_qag8a")]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
 [node name="Slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("2_qag8a")]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
 [node name="Slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("2_qag8a")]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
 [node name="Slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("2_qag8a")]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
 [node name="Slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("2_qag8a")]

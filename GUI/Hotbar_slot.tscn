@@ -7,20 +7,30 @@
 [node name="HotbarSlot" type="Button"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(20, 20)
-offset_right = 20.0
-offset_bottom = 20.0
+offset_right = 91.0
+offset_bottom = 90.0
+scale = Vector2(6, 6)
 script = ExtResource("1_kho14")
 
 [node name="background" type="Sprite2D" parent="."]
+scale = Vector2(4.5, 4.5)
 texture = ExtResource("2_iwrh7")
 centered = false
 vframes = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_right = 20.0
-offset_bottom = 20.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -24.0
+offset_right = 28.5
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Panel" parent="CenterContainer" instance=ExtResource("3_nmaxk")]
 layout_mode = 2

@@ -336,7 +336,7 @@ layer_4/modulate = Color(1, 1, 1, 1)
 layer_4/y_sort_enabled = false
 layer_4/y_sort_origin = 0
 layer_4/z_index = 0
-layer_4/tile_data = PackedInt32Array(458761, 0, 65536, 524293, 0, 65536, 327696, 0, 65536, 655382, 0, 65536, 851979, 0, 65536, 458762, 0, 131072, 524292, 0, 131072, 655381, 0, 131072, 393224, 0, 196608, 393232, 0, 196608, 589829, 0, 196608, 655458, 0, 196608, 852067, 0, 65536)
+layer_4/tile_data = PackedInt32Array(458761, 0, 65536, 524293, 0, 65536, 327696, 0, 65536, 655382, 0, 65536, 851979, 0, 65536, 458762, 0, 131072, 524292, 0, 131072, 655381, 0, 131072, 393224, 0, 196608, 393232, 0, 196608, 589829, 0, 196608, 655458, 0, 196608, 852067, 0, 65536, 917555, 0, 65536, 2490434, 0, 65536, 2359397, 0, 65536, 2490441, 0, 196608, 2424922, 0, 196608, 65609, 0, 65536, 589888, 0, 65536, 1048623, 0, 65536, 1900586, 0, 65536)
 layer_5/name = "Buildings"
 layer_5/enabled = true
 layer_5/modulate = Color(1, 1, 1, 1)
@@ -367,11 +367,12 @@ endPoint = NodePath("slime3")
 position = Vector2(208, 112)
 
 [node name="enemy4" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("6_q8s5d")]
-position = Vector2(1152, 352)
+position = Vector2(1150, 484)
+speed = 40
 endPoint = NodePath("slime4")
 
 [node name="slime4" type="Marker2D" parent="TileMap/enemy4"]
-position = Vector2(256, 0)
+position = Vector2(1, -278)
 
 [node name="enemy5" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("6_q8s5d")]
 position = Vector2(1264, 176)
@@ -383,8 +384,21 @@ position = Vector2(256, 0)
 [node name="Dragon" parent="TileMap" instance=ExtResource("9_3wgit")]
 position = Vector2(1424, 144)
 
+[node name="Dragon2" parent="TileMap" instance=ExtResource("9_3wgit")]
+position = Vector2(1062, 339)
+
+[node name="Dragon3" parent="TileMap" instance=ExtResource("9_3wgit")]
+position = Vector2(747, 266)
+
+[node name="Dragon4" parent="TileMap" instance=ExtResource("9_3wgit")]
+position = Vector2(400, 477)
+
+[node name="Dragon5" parent="TileMap" instance=ExtResource("9_3wgit")]
+position = Vector2(324, 135)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
+visible = false
 script = ExtResource("10_krpr7")
 
 [node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("7_fxfjs")]
@@ -409,21 +423,12 @@ offset_left = -69.0
 offset_top = -45.5
 offset_right = 69.0
 offset_bottom = 45.5
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("13_acybl")]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -58.0
-offset_top = -58.0
-offset_right = 58.0
-offset_bottom = -38.0
-grow_horizontal = 2
-grow_vertical = 0
+offset_left = -5.0
+offset_top = 260.0
+offset_right = -5.0
+offset_bottom = 263.0
 
 [node name="SceneTrigger" parent="." instance=ExtResource("15_15jcy")]
 position = Vector2(1488, 153)
