@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://x3pu6eijv86f"]
+[gd_scene load_steps=16 format=3 uid="uid://ds8840bb6yduf"]
 
-[ext_resource type="Texture2D" uid="uid://bexq0ot4qdpif" path="res://Assets/Slime.png" id="1_cnilt"]
-[ext_resource type="Script" path="res://Scripts/slime.gd" id="1_p6qpj"]
-[ext_resource type="Texture2D" uid="uid://cibhpbbxnbnle" path="res://Assets/SpriteSheet.png" id="3_ec8jm"]
+[ext_resource type="Script" path="res://Scripts/dragon.gd" id="1_80uda"]
+[ext_resource type="Texture2D" uid="uid://cwit8cufgfk4y" path="res://Assets/dragonSprite.png" id="2_p6ayl"]
+[ext_resource type="Script" path="res://Component/follow_movement.gd" id="3_122mh"]
+[ext_resource type="Texture2D" uid="uid://cibhpbbxnbnle" path="res://Assets/SpriteSheet.png" id="3_ifel3"]
 
 [sub_resource type="Animation" id="Animation_wq5k1"]
 length = 0.001
@@ -297,16 +298,18 @@ height = 16.0
 radius = 7.0
 height = 18.0
 
-[node name="enemy" type="CharacterBody2D" node_paths=PackedStringArray("endPoint")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_4te78"]
+radius = 33.0151
+
+[node name="Dragon" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_p6qpj")
-endPoint = NodePath("")
+script = ExtResource("1_80uda")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -7)
-texture = ExtResource("1_cnilt")
+texture = ExtResource("2_p6ayl")
 hframes = 4
 vframes = 4
 
@@ -316,9 +319,10 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
-rotation = 1.5708
+position = Vector2(0, -6)
+rotation = 3.14159
 shape = SubResource("CapsuleShape2D_2ipls")
+debug_color = Color(0.701961, 0.490196, 0.00784314, 0.419608)
 
 [node name="hitBox" type="Area2D" parent="."]
 collision_layer = 4
@@ -326,8 +330,9 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
 position = Vector2(0, -5)
-rotation = 1.5708
+rotation = 3.14159
 shape = SubResource("CapsuleShape2D_l84ok")
+debug_color = Color(0.988235, 0.0588235, 0.196078, 0.419608)
 
 [node name="hurtBox" type="Area2D" parent="."]
 collision_layer = 0
@@ -335,13 +340,28 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
 position = Vector2(0, -6)
-rotation = 1.5708
+rotation = 3.14159
 shape = SubResource("CapsuleShape2D_52o01")
 
 [node name="deathEffect" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, -9)
-texture = ExtResource("3_ec8jm")
+texture = ExtResource("3_ifel3")
 hframes = 6
 
+[node name="FollowMovement" type="Node" parent="."]
+script = ExtResource("3_122mh")
+
+[node name="FollowArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FollowArea"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_4te78")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
 [connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="body_entered" from="FollowArea" to="FollowMovement" method="_on_follow_area_body_entered"]
+[connection signal="body_exited" from="FollowArea" to="FollowMovement" method="_on_follow_area_body_exited"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="FollowMovement" method="_on_visible_on_screen_notifier_2d_screen_exited"]

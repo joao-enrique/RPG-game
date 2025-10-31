@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://wca44pj6lt65"]
+[gd_scene load_steps=24 format=3 uid="uid://wca44pj6lt65"]
 
 [ext_resource type="Texture2D" uid="uid://kl8p7olyym17" path="res://Assets/groundTileset.png" id="1_fb7ub"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_h71oq"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/Follow Cam.gd" id="5_n0s3c"]
 [ext_resource type="PackedScene" uid="uid://x3pu6eijv86f" path="res://Enemies/enemy.tscn" id="6_q8s5d"]
 [ext_resource type="PackedScene" uid="uid://drhtlgqmb85go" path="res://GUI/hearts_container.tscn" id="7_fxfjs"]
+[ext_resource type="PackedScene" uid="uid://ds8840bb6yduf" path="res://Enemies/dragon.tscn" id="9_3wgit"]
 [ext_resource type="PackedScene" uid="uid://d21qnschqbca3" path="res://Collectables/lifepot.tscn" id="9_t4hxc"]
 [ext_resource type="Script" path="res://Scripts/CanvasLayer.gd" id="10_krpr7"]
 [ext_resource type="PackedScene" uid="uid://d1fxt4mrmxivv" path="res://GUI/inventory_gui.tscn" id="11_3wio6"]
@@ -346,7 +347,6 @@ layer_5/tile_data = PackedInt32Array(524381, 1, 0)
 
 [node name="enemy" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("6_q8s5d")]
 position = Vector2(96, 96)
-limit = 5.0
 endPoint = NodePath("slime1")
 
 [node name="slime1" type="Marker2D" parent="TileMap/enemy"]
@@ -354,7 +354,6 @@ position = Vector2(-64, 48)
 
 [node name="enemy2" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("6_q8s5d")]
 position = Vector2(112, 32)
-limit = 9.0
 endPoint = NodePath("slime2")
 
 [node name="slime2" type="Marker2D" parent="TileMap/enemy2"]
@@ -376,11 +375,13 @@ position = Vector2(256, 0)
 
 [node name="enemy5" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("6_q8s5d")]
 position = Vector2(1264, 176)
-limit = 3.0
 endPoint = NodePath("slime5")
 
 [node name="slime5" type="Marker2D" parent="TileMap/enemy5"]
 position = Vector2(256, 0)
+
+[node name="Dragon" parent="TileMap" instance=ExtResource("9_3wgit")]
+position = Vector2(1424, 160)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
