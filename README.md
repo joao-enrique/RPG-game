@@ -1,5 +1,11 @@
 <h1 align="center">🗡️ RPG Game ✨</h1>
 
+<div align="center">
+    <a href="https://jedev1.itch.io/rpg-game" target="_blank"> 
+        <img src="https://i.ibb.co/PvmND5Sk/CONFIRA-O-PROJETO-AQUI-1.png" alt="Button image" /> 
+    </a> 
+</div>
+
 <p align="center">
   <b>Um RPG completo com combate corpo-a-corpo, exploração, troca de cenas e gerenciamento de inventário, desenvolvido inteiramente em Godot usando GDScript.</b>
 </p>
